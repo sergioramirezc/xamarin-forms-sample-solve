@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Padding="10,5">
                     <Label Text="Estado: " />
                     <Label Text="{Binding ConnectionText}" />
                     <Button
