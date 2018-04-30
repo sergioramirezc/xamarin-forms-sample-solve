@@ -7,6 +7,8 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System;
 using SR.Xam.Sample.Services;
+using System.Collections.Generic;
+using Microsoft.AppCenter.Crashes;
 
 namespace SR.Xam.Sample.Services.RequestProvider
 {
@@ -35,7 +37,13 @@ namespace SR.Xam.Sample.Services.RequestProvider
             }
             catch (Exception ex)
             {
-                await _dialogservice.ShowAlertAsync(ex.Message, "Error", "Aceptar");
+                await _dialogservice.ShowAlertAsync(uri + " " + ex.Message, "Error", "Aceptar");
+                var properties = new Dictionary<string, string> {
+                    { "Url", uri },
+                    { "Method", "Get" },
+                };
+                Crashes.TrackError(ex, properties);
+
                 return default(TResult);
             }
         }

@@ -38,7 +38,7 @@ namespace SR.Xam.Sample.ViewModels.Base
             }
         }
 
-        public string ConnectionLabel
+        public string ConnectionText
         {
             get { return IsConnected ? "Conectado" : "Desconectado"; }
         }
