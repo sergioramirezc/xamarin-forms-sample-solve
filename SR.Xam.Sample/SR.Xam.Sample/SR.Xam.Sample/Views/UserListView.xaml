@@ -9,9 +9,8 @@
     viewModelBase:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Command="{Binding AddItemCommand}"
-            Icon="ic_add_circle"
-            Text="+" />
+            Command="{Binding AboutCommand}"
+            Text="?" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
