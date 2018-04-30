@@ -25,7 +25,7 @@ namespace SR.Xam.Sample.Services.User
             {
                 //if has internet connection: call the rest service
                 //if not, get offline data
-                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                if (await ConnectivityHelper.CheckConnectivityAsync())
                 {
                     string uri = String.Format(Constants.ApiUri+ "/api/users?per_page={0}", 50);
                     var response = await _requestProvider.GetAsync<UserListModel>(uri);
@@ -33,6 +33,7 @@ namespace SR.Xam.Sample.Services.User
                     {
                         response = new UserListModel();
                     }
+                    Settings.UserList = response;
                     return response;
                 }
                 else

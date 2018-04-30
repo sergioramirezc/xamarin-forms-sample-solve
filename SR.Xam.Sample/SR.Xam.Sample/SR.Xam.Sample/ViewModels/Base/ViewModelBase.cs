@@ -52,6 +52,7 @@ namespace SR.Xam.Sample.ViewModels.Base
                 _isConnected = value;
                 RaisePropertyChanged(() => IsConnected);
                 RaisePropertyChanged(() => IsNotConnected);
+                RaisePropertyChanged(() => ConnectionText);
             }
         }
 
