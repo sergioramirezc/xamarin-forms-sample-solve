@@ -26,8 +26,8 @@ namespace SR.Xam.Sample.Services.RequestProvider
         {
             try
             {
-                HttpClient httpClient = CreateHttpClient(token);
-                HttpResponseMessage response = await httpClient.GetAsync(uri);
+                HttpClient httpClient = new HttpClient();
+                HttpResponseMessage response = await httpClient.GetAsync("https://reqres.in/api/users?per_page=20");
 
                 string serialized = await response.Content.ReadAsStringAsync();
 
@@ -37,7 +37,7 @@ namespace SR.Xam.Sample.Services.RequestProvider
             }
             catch (Exception ex)
             {
-                await _dialogservice.ShowAlertAsync(uri + " " + ex.Message, "Error", "Aceptar");
+                await _dialogservice.ShowAlertAsync(uri + " " + ex.StackTrace, "Error", "Aceptar");
                 var properties = new Dictionary<string, string> {
                     { "Url", uri },
                     { "Method", "Get" },

@@ -51,6 +51,7 @@
     <Compile Include="Services\RequestProvider\IRequestProvider.cs" />
     <Compile Include="Services\RequestProvider\RequestProvider.cs" />
     <Compile Include="Services\User\IUserService.cs" />
+    <Compile Include="Services\User\UserMockService.cs" />
     <Compile Include="Services\User\UserService.cs" />
     <Compile Include="ViewModels\Base\ExtendedBindableObject.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
