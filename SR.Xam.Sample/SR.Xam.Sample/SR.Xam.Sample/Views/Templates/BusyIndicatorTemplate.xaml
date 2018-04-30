@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="SR.Xam.Sample.Views.Templates.BusyIndicatorTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <RelativeLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <AbsoluteLayout
+                BackgroundColor="Transparent"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                       Property=Height}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width}">
+                <BoxView
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Opacity="0.6"
+                    VerticalOptions="FillAndExpand" />
+                <!--  INDICATOR  -->
+                <ActivityIndicator
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Center"
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}"
+                    Opacity="0.7"
+                    VerticalOptions="Center"
+                    Color="#00afdc">
+                    <ActivityIndicator.Scale>
+                        <OnPlatform
+                            x:TypeArguments="x:Double"
+                            Android="1"
+                            WinPhone="1"
+                            iOS="2" />
+                    </ActivityIndicator.Scale>
+                    <ActivityIndicator.WidthRequest>
+                        <OnPlatform
+                            x:TypeArguments="x:Double"
+                            Android="75"
+                            WinPhone="75"
+                            iOS="200" />
+                    </ActivityIndicator.WidthRequest>
+                    <ActivityIndicator.MinimumWidthRequest>
+                        <OnPlatform
+                            x:TypeArguments="x:Double"
+                            Android="75"
+                            WinPhone="75"
+                            iOS="200" />
+                    </ActivityIndicator.MinimumWidthRequest>
+                    <ActivityIndicator.HeightRequest>
+                        <OnPlatform
+                            x:TypeArguments="x:Double"
+                            Android="75"
+                            WinPhone="75"
+                            iOS="200" />
+                    </ActivityIndicator.HeightRequest>
+                    <ActivityIndicator.MinimumHeightRequest>
+                        <OnPlatform
+                            x:TypeArguments="x:Double"
+                            Android="75"
+                            WinPhone="75"
+                            iOS="200" />
+                    </ActivityIndicator.MinimumHeightRequest>
+                </ActivityIndicator>
+            </AbsoluteLayout>
+        </RelativeLayout>
+    </ContentView.Content>
+</ContentView>

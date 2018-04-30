@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SR.Xam.Sample.Views.UserListView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:SR.Xam.Sample.Views.Templates;assembly=SR.Xam.Sample"
+    xmlns:viewModelBase="clr-namespace:SR.Xam.Sample.ViewModels.Base;assembly=SR.Xam.Sample"
+    Title="Lista Usuarios"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Command="{Binding AddItemCommand}"
+            Icon="ic_add_circle"
+            Text="+" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Estado: " />
+                    <Label Text="{Binding ConnectionText}" />
+                    <Button
+                        Command="{Binding TryConnectCommand}"
+                        IsVisible="{Binding IsNotConnected}"
+                        Text="Reconectar" />
+                </StackLayout>
+                <ListView HasUnevenRows="True" ItemsSource="{Binding UserList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="250">
+                                <templates:ListItemTemplate BindingContext="{Binding .}" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <!--  See loader  -->
+            <templates:BusyIndicatorTemplate IsVisible="{Binding IsBusy}" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
