@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Crashes;
 using SR.Xam.Sample.Services;
 using SR.Xam.Sample.ViewModels.Base;
 using Xamarin.Forms;
@@ -31,6 +33,12 @@ namespace SR.Xam.Sample
         protected override async void OnStart()
         {
             base.OnStart();
+
+            AppCenter.Start("android=c1814787-b3a3-45a6-a413-db78ad6213df;" +
+                  "uwp={Your UWP App secret here};" +
+                  "ios={Your iOS App secret here}",
+                  typeof(Crashes));
+
             await InitNavigation();
         }
 
