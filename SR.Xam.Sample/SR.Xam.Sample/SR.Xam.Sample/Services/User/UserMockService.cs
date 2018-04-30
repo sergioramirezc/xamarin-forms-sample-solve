@@ -9,9 +9,30 @@ namespace SR.Xam.Sample.Services.User
 {
     public class UserMockService : IUserService
     {
-        public Task<UserListModel> GetUserList(int page)
+        public async Task<UserListModel> GetUserList(int page)
         {
-            throw new NotImplementedException();
+            return new UserListModel()
+            {
+                Users = new List<UserModel>()
+                {
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                    new UserModel(){ Id = 1, First_name = "", Last_name = "", Avatar = ""},
+                }
+            };
         }
     }
 }
