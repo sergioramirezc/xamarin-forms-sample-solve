@@ -12,16 +12,6 @@ namespace SR.Xam.Sample.Services
 {
     public class NavigationService : INavigationService
     {
-        public ViewModelBase PreviousPageViewModel
-        {
-            get
-            {
-                var mainPage = Application.Current.MainPage as CustomNavigationView;
-                var viewModel = mainPage.Navigation.NavigationStack[mainPage.Navigation.NavigationStack.Count - 2].BindingContext;
-                return viewModel as ViewModelBase;
-            }
-        }
-
         public Task InitializeAsync()
         {
             return NavigateToAsync<UserListViewModel>();

@@ -38,6 +38,12 @@ namespace SR.Xam.Sample.ViewModels.Base
             }
         }
 
+        public string ConnectionLabel
+        {
+            get { return IsConnected ? "Conectado" : "Desconectado"; }
+        }
+
+
         public bool IsConnected
         {
             get { return _isConnected; }

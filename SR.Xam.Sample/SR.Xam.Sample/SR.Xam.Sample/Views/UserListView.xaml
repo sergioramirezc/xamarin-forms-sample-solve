@@ -8,9 +8,7 @@
     Title="Lista Usuarios"
     viewModelBase:ViewModelLocator.AutoWireViewModel="true">
     <ContentPage.ToolbarItems>
-        <ToolbarItem
-            Command="{Binding AboutCommand}"
-            Text="?" />
+        <ToolbarItem Command="{Binding AboutCommand}" Text="?" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

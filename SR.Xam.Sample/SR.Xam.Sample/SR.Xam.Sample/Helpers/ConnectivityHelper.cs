@@ -21,7 +21,7 @@ namespace SR.Xam.Sample.Helpers
         public static async Task<bool> CheckConnectivityAsync()
         {
             bool response;
-
+            //checking internet connectivity pinging to google
             if (CrossConnectivity.Current.IsConnected)
             {
                 if (_lastCheckDateConnectivity.AddSeconds(3) < DateTime.Now)

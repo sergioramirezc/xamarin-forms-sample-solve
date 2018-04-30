@@ -43,7 +43,7 @@ namespace SR.Xam.Sample.Helpers
             }
         }
 
-
+        //Storing and Getting data from internal memory
         public static UserListModel UserList
         {
             get

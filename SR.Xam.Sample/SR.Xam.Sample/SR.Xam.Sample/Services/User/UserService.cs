@@ -24,13 +24,10 @@ namespace SR.Xam.Sample.Services.User
             try
             {
                 //if has internet connection: call the rest service
-                //if not, get 
+                //if not, get offline data
                 if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
                 {
-                    UriBuilder builder = new UriBuilder(Constants.ApiUri);
-                    builder.Path = "api/users";
-                    builder.Query = String.Format("per_page=100");
-                    string uri = builder.ToString();
+                    string uri = String.Format(Constants.ApiUri+ "/api/users?per_page={0}", 50);
                     var response = await _requestProvider.GetAsync<UserListModel>(uri);
                     if (response == null)
                     {
