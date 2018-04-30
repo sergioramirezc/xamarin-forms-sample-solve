@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout Orientation="Horizontal" Padding="10,5">
+                <StackLayout Padding="10,5" Orientation="Horizontal">
                     <Label Text="Estado: " />
                     <Label Text="{Binding ConnectionText}" />
                     <Button
@@ -24,7 +24,7 @@
                 <ListView HasUnevenRows="True" ItemsSource="{Binding UserList}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell Height="250">
+                            <ViewCell Height="150">
                                 <templates:ListItemTemplate BindingContext="{Binding .}" />
                             </ViewCell>
                         </DataTemplate>

@@ -39,8 +39,10 @@
             Grid.Column="1"
             Margin="15,0,0,0"
             Aspect="AspectFit"
-            HeightRequest="200"
+            HeightRequest="150"
+            HorizontalOptions="FillAndExpand"
             RetryCount="3"
-            Source="{Binding Avatar}" />
+            Source="{Binding Avatar}"
+            VerticalOptions="FillAndExpand" />
     </Grid>
 </ContentView>
