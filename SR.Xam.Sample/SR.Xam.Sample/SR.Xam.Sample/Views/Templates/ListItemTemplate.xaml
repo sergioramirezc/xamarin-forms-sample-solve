@@ -39,8 +39,10 @@
             Grid.Column="1"
             Margin="15,0,0,0"
             Aspect="AspectFit"
+            ErrorPlaceholder="ic_cancel"
             HeightRequest="150"
             HorizontalOptions="FillAndExpand"
+            LoadingPlaceholder="ic_sync"
             RetryCount="3"
             Source="{Binding Avatar}"
             VerticalOptions="FillAndExpand" />
